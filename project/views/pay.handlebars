@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Payment Page</title>
+
+    <!-- Icons font CSS-->
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+    <!-- -->
+    
+    <!-- Main CSS-->
+    <link href="public/css/main.css" rel="stylesheet" media="all">
+    <!-- Jquery To push data to MongoDB-->
+    <script>
+	  $('button.orderedPlacebutton').click(function(){
+		  $('form.card-details-form-class').submit();
+	  });
+  </script>
+</head>
+
+<body>
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                      <div class="container">
+    	                <br>
+                        <div class="checkout-details-info" style="position: relative; top:-100px">
+                            <div class="bag-container">
+        	                    <div class="Shopping-bag" style="position:relative; top:50px; color: #c00; font-size: 20px; font-weight: bold; font-family: AvenirLTStd35Light,Arial,Helvetica,Verdana,Sans-serif;">
+        		                    <h4> Current Shopping Bag Reciept </h4>
+        	                    </div> 
+                                <br>
+				                <div class="total" style="position:relative; top:40px;">
+					                <div class="totalStandard" style="display:inline-block; float:left;"> SubTotal </div>
+					                <div id="bagMerchandiseTotal" style="float:right;"> $459 </div>
+				                </div>
+				                <br>
+				                <br>
+				                <div class="total-shipping" style="position:relative; top:40px;">
+					                <div class="totalStandard" style="display:inline-block; float:left;"> Shipping </div>
+					                <div id="bagMerchandiseTotal" style=" float:right;"> Free </div>
+				                </div>
+				                <br>
+				                <br>
+				                <div class="total-tax" style="position:relative; top:40px;">
+					                <div class="totalStandard" style="display:inline-block; float:left;"> Tax </div>
+					                <div id="bagMerchandiseTotal" style=" float:right;"> $459 </div>
+				                </div>
+				                <br>
+				                <br>
+				                <div class="total-order" style="border-bottom: 1px solid black; border-bottom-width: thin; position:relative; top:40px;">
+					                <div class="totalStandard" style="display:inline-block; float:left;"> Order Total</div>
+					                <div id="bagMerchandiseTotal" style=" float:right;"> $459 </div>
+				                </div>
+				            
+		                </div>
+		                
+		                        <div class="keep-shopping" style="position: relative; top:90px; left:140px;">
+			                        <p text-align="center"> <a href="/checkout"> Continue Shopping</a> </p>
+                                    <div class="credit-cards" style="position: relative; top:15px; left:45px;">
+			                            <p style="color: grey; font-size: 10px;"> we accept a variety of payment options </p></div>
+			                        <div class="credit-cards-img" style="position: relative; top:15px; left:65px;">
+                                        <img src="public/images/creditcard.png" width="150px" height="40px" alt="src not found">
+                                    </div>
+		                        </div>
+                    </div>
+                    <div class="payment">
+                        <div align="center" style="background-color:#CB4335;height:30px;color:white; top:20px;position: relative;">
+		                        <h3 style="top:2px;">Payment Details </h3></div>
+		                        <br>
+		                        <form method="POST" action="payment" id="card-details-form-id" class="card-details-form-class">
+		                            <div class="paymenttable" style="align:center;width:490px;top:20px;position: relative;">
+		                                <table class="paymentform" style="align:center;width:490px;">
+		                                    <tr>
+                                                <td><label>Card Holder's Name</label> </td>
+                                                <td><input type="text" name="cardholdersname" placeholder="Eg: John Federick"required></td>
+                                            </tr>
+                                            <tr></tr>
+                                            <tr>
+                                                <td> <label>CardNumber</label></td>
+                                                <td> <input type="text" name="cardNumber" placeholder="Eg: 2345 6789 5678 6754" required></td>
+                                            </tr>
+                                            <tr>
+                                                <td><label>Expiry Date</label></td>
+                                                <td>
+                                                <select id="month" name="month">
+                                                    <option value="01">01</option>
+                                                    <option value="02">02</option>
+                                                    <option value="03">03</option>
+                                                    <option value="04">04</option>
+                                                    <option value="05">05</option>
+                                                    <option value="06">06</option>
+                                                    <option value="07">07</option>
+                                                    <option value="08">08</option>
+                                                    <option value="09">09</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                                
+                                                
+                                                <select id="year" name="year">
+                                                    <option value="2018">2018</option>
+                                                    <option value="2019">2019</option>
+                                                    <option value="2020">2020</option>
+                                                    <option value="2021">2021</option>
+                                                    <option value="2022">2022</option>
+                                                    <option value="2023">2023</option>
+                                                    <option value="2024">2024</option>
+                                                    <option value="2025">2025</option>
+                                                    <option value="2026">2026</option>
+                                                    <option value="2027">2027</option>
+                                                    <option value="2028">2028</option>
+                                                    <option value="2029">2029</option>
+                                                </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><label>CVC</label></td>
+                                                <td><input type="text" name="email" placeholder="Eg: 234" required></td>
+                                            </tr>
+                                            <tr>
+                                            <td class="full" style="position: relative;top:20px; left:40px;">
+                                                <button value="submit" class="btn btn--radius-2 btn--green cancelbutton" onclick="location.href='/checkout';">Cancel</button>
+                                            </td>
+                                            <td class="full" style="position: relative;top:20px;left:30px;">
+                                                <button value="submit" class="btn btn--radius-2 btn--blue orderedPlacebutton">PlaceOrder</button>
+                                            </td>
+                                            </tr>                  
+                                        </table>
+                                    </div>
+                                 </form>
+                            </div>
+                            <div style="position: relative; top:48px;font-size:10px;color:grey; left:20px;"><p>Order confirmation Mail will be sent to your registered email id once after placing order</p></div>
+                        </div>
+            </div>
+        </div>
+    </div>
+</div>
+     <!-- Jquery JS-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <script src="vendor/datepicker/moment.min.js"></script>
+    <script src="vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="js/global.js"></script>
+
+</body>

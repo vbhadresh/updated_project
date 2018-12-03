@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Acme Web Design</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+  <link rel="stylesheet" href="public/css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script
+  src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"
+  integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk="
+  crossorigin="anonymous"></script>
+  <script>
+	  $('button.shippingaddressButton').click(function(){
+		  $('form.shippingform').submit(function(event){
+			  var hideele=$('div.add-address').hide();
+			  var showele=$('div.updated-address').show();
+
+		  });
+	  });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <br>
+    <div class="shopping-bag-details" style="border-style: solid; border-width: 5px; border-color: #f7f7f7;padding: 5px; text-align: center;">
+    	<span style="font-family: AvenirLTStd35Light,Arial,Helvetica,Verdana,Sans-serif; font-size: 32px; color: #c00;">Your Current Shopping Bag</span>
+    </div>
+    <br>
+    <div class="wrapper animated bounceInLeft">
+    	<br>
+      <div class="checkout-details-info" style="position: relative; top:-100px">
+        <div class="bag-container">
+        	<div class="Shopping-bag" style="color: #c00; font-size: 20px; font-weight: bold; font-family: AvenirLTStd35Light,Arial,Helvetica,Verdana,Sans-serif;">
+        		<h4> Current Shopping Bag </h4>
+        	</div> 
+				<div class="total">
+					<div class="totalStandard" style="display:inline-block; float:left;"> SubTotal </div>
+					<div id="bagMerchandiseTotal" style="float:right;"> $459 </div>
+				</div>
+				<br>
+				<br>
+				<div class="total-shipping" style="">
+					<div class="totalStandard" style="display:inline-block; float:left;"> Shipping </div>
+					<div id="bagMerchandiseTotal" style=" float:right;"> Free </div>
+				</div>
+				<br>
+				<br>
+				<div class="total-tax" style="">
+					<div class="totalStandard" style="display:inline-block; float:left;"> Tax </div>
+					<div id="bagMerchandiseTotal" style=" float:right;"> $459 </div>
+				</div>
+				<br>
+				<br>
+				<div class="total-order" style="border-bottom: 1px solid black; border-bottom-width: thin;">
+					<div class="totalStandard" style="display:inline-block; float:left;"> Order Total</div>
+					<div id="bagMerchandiseTotal" style=" float:right;"> $459 </div>
+				</div>
+
+				<div style="border-bottom: 1px solid black; border-bottom-width: thin;"></div>
+
+		</div>
+		<br>
+		<br>
+		
+		<br>
+		<div class="keep-shopping" align="center">
+			<p text-align="center"> <a href="#"> Keep Shopping</a> </p>
+			<p style="color: grey; font-size: 10px;"> we accept a variety of payment options </p>
+			<img src="public/images/creditcard.png" width="150px" height="40px" alt="src not found">
+		</div>
+     </div>
+      <div class="payment">
+        <div align="center" style="background-color:#CB4335;height:30px;color:white;">
+		<h3 style="top:2px;">Payment Details </h3></div>
+		<br>
+		<form method="POST" action="payment">
+		<div class="paymenttable" style="align:center;width:490px;">
+		<table class="paymentform" style="align:center;width:490px;">
+			<tr>
+				&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="credit" value="Credit Card"> &nbsp;&nbsp;Credit Card 
+				&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="credit" value="Debit Card">&nbsp;&nbsp;Debit Card </td>
+			</tr>
+		<tr>
+            <td><label>Card Holder's Name</label> </td>
+            <td><input type="text" name="cardholdersname" placeholder="Eg: John Federick"required></td>
+		</tr>
+		
+		 <tr>
+           <td> <label>CardNumber</label></td>
+           <td> <input type="text" name="cardNumber" placeholder="Eg: 2345 6789 5678 6754" required></td>
+          </tr>
+		  <tr>
+            <td><label>Expiry Date</label></td>
+            <td>
+			<select id="month" name="month">
+				<option value="01">01</option>
+				<option value="02">02</option>
+				<option value="03">03</option>
+				<option value="04">04</option>
+				<option value="05">05</option>
+				<option value="06">06</option>
+				<option value="07">07</option>
+				<option value="08">08</option>
+				<option value="09">09</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+			</select>
+			
+			
+			<select id="year" name="year">
+				<option value="2018">2018</option>
+				<option value="2019">2019</option>
+				<option value="2020">2020</option>
+				<option value="2021">2021</option>
+				<option value="2022">2022</option>
+				<option value="2023">2023</option>
+				<option value="2024">2024</option>
+				<option value="2025">2025</option>
+				<option value="2026">2026</option>
+				<option value="2027">2027</option>
+				<option value="2028">2028</option>
+				<option value="2029">2029</option>
+			</select>
+			</td>
+          </tr>
+          <tr>
+            <td><label>CVC</label></td>
+            <td><input type="text" name="email" placeholder="Eg: 234" required></td>
+          </tr>
+		  <tr>
+           <td class="full">
+            <button value="submit" class="btn btn-warning">Cancel</button>
+          </td>
+          <td class="full">
+            <button value="submit" class="btn btn-primary">Submit</button>
+          </td>
+		  </tr>
+		  </table>
+		  </div>
+        </form>
+      </div>
+    </div>
+</div>
+  </div>
+</body>
+</html>
